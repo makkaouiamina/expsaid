@@ -1,0 +1,26 @@
+<div class="container" style="margin-top: 50px;">
+    
+        <div>
+            <div class="row">
+            <div class="col col-log-6">
+                <app-login-container-left (childToParent)="fromloginChild($event)" *ngIf="!showsignup"></app-login-container-left>
+            </div>
+            <div class="col col-log-6">
+                <app-signup-container-right *ngIf="!showsignup"></app-signup-container-right>
+            </div>
+            
+        </div>
+    </div>
+    <div>
+    <div class="row">
+        <div class="col col-log-6">
+            <app-signup-container-left (childToParent)="fromsignupChild($event)" *ngIf="showlogin"></app-signup-container-left>
+        </div>
+        <div class="col col-log-6">
+            <app-login-container-right *ngIf="showlogin"></app-login-container-right>
+        </div>
+        
+    </div>
+    </div>
+
+</div>
