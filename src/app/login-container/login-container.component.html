@@ -1,40 +1,44 @@
 <div class="container" style="margin-top: 50px;">
 
-        <div>
-            <div class="row">
-            <div class="col col-log-6">
-                <app-login-container-left (childToParent)="onSwitch()" *ngIf="showlogin"></app-login-container-left>
-            </div>
-            <div class="col col-log-6">
-                <app-signup-container-right (switch)="onSwitchEmail()" *ngIf="!showsignup"></app-signup-container-right>
-            </div>
+  <div>
+      <div class="row">
+      <div class="col col-log-6">
+          <app-login-container-left (childToParent)="onSwitch()" *ngIf="!showsignup"></app-login-container-left>
+      </div>
+      <div class="col col-log-6">
+        <ng-template #elseBlock><div>
+          <app-signup-container-right (switch)="onSwitchEmail()" *ngIf="!showsignup"></app-signup-container-right>
+      </div>
+        </ng-template>
+        
+      <div>
+        <app-signup-container-email *ngIf="showSingE else elseBlock"></app-signup-container-email>
+      </div>
+      </div>
+      
 
-        </div>
-    </div>
-    <div>
+  </div>
+</div>
+<div>
+<div class="row">
+  <div class="col col-log-6">
+      <app-signup-container-left (childToParent)="onSwitch()" *ngIf="showlogin"></app-signup-container-left>
+  </div>
+
+  <div class="col col-log-6">
     <div class="row">
-        <div class="col col-log-6">
-            <app-signup-container-left (childToParent)="onSwitch()" *ngIf="!showsignup"></app-signup-container-left>
-        </div>
 
-        <div class="col col-log-6">
-          <div class="row">
+      <div class="col-sm">
+      <app-login-container-right *ngIf="showlogin"></app-login-container-right>
+    </div>
 
-            <div class="col-sm">
-            <app-login-container-right *ngIf="showlogin"></app-login-container-right>
-          </div>
-
-            <div class="col-sm">
-            <app-signup-container-email *ngIf="showSingE"></app-signup-container-email>
-          </div>
-
-          </div>
-        </div>
-
-
-
+    
 
     </div>
-    </div>
+  </div>
+
+
+</div>
+</div>
 
 </div>

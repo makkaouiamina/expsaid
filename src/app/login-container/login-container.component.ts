@@ -20,13 +20,13 @@ export class LoginContainerComponent implements OnInit {
   }
 
   onSwitch(){
-
       this.showlogin = !this.showlogin;
       this.showsignup = !this.showsignup;
+      this.showSingE = false;
+      console.log('show form',this.showSingE)
   }
 
   onSwitchEmail(){
     this.showSingE= !this.showSingE;
-
   }
 }
