@@ -19,7 +19,7 @@ export class LoginContainerComponent implements OnInit {
     this.showSingE= false;
   }
 
-  onSwitch($event){
+  onSwitch(){
 
       this.showlogin = !this.showlogin;
       this.showsignup = !this.showsignup;
