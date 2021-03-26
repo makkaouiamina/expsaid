@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,  EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-signup-container-right',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupContainerRightComponent implements OnInit {
 
+  @Output() switch = new EventEmitter();
+  showE: true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.switch.emit(this.showE);
   }
 
 }

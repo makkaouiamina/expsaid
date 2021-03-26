@@ -8,6 +8,7 @@ import { LoginContainerLeftComponent } from './login-container/login-container-l
 import { LoginContainerRightComponent } from './login-container/login-container-right/login-container-right.component';
 import { SignupContainerRightComponent } from './login-container/signup-container-right/signup-container-right.component';
 import { SignupContainerLeftComponent } from './login-container/signup-container-left/signup-container-left.component';
+import { SignupContainerEmailComponent } from './login-container/signup-container-email/signup-container-email.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignupContainerLeftComponent } from './login-container/signup-container
     LoginContainerLeftComponent,
     LoginContainerRightComponent,
     SignupContainerRightComponent,
-    SignupContainerLeftComponent
+    SignupContainerLeftComponent,
+    SignupContainerEmailComponent
   ],
   imports: [
     BrowserModule,

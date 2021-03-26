@@ -9,30 +9,24 @@ export class LoginContainerComponent implements OnInit {
 
   showlogin: boolean;
   showsignup:boolean;
+  showSingE:boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.showlogin=false
-    this.showsignup=false
+    this.showlogin=false;
+    this.showsignup=false;
+    this.showSingE= false;
   }
 
-  fromloginChild($event){
-    if($event = true){
-      this.showlogin = $event
-      this.showsignup = $event
-    }
-    console.log($event)
-    console.log('loginproprety', this.showlogin)
-    console.log('signuppropert', this.showsignup)
+  onSwitch($event){
+
+      this.showlogin = !this.showlogin;
+      this.showsignup = !this.showsignup;
   }
-  fromsignupChild($event){
-    if($event = true){
-      this.showlogin = !$event
-      this.showsignup = !$event
-    }
-    console.log($event)
-    console.log('loginproprety', this.showlogin)
-    console.log('signuppropert', this.showsignup)
+
+  onSwitchEmail(){
+    this.showSingE= !this.showSingE;
+
   }
 }

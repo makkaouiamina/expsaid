@@ -1,25 +1,39 @@
 <div class="container" style="margin-top: 50px;">
-    
+
         <div>
             <div class="row">
             <div class="col col-log-6">
-                <app-login-container-left (childToParent)="fromloginChild($event)" *ngIf="!showsignup"></app-login-container-left>
+                <app-login-container-left (childToParent)="onSwitch()" *ngIf="showlogin"></app-login-container-left>
             </div>
             <div class="col col-log-6">
-                <app-signup-container-right *ngIf="!showsignup"></app-signup-container-right>
+                <app-signup-container-right (switch)="onSwitchEmail()" *ngIf="!showsignup"></app-signup-container-right>
             </div>
-            
+
         </div>
     </div>
     <div>
     <div class="row">
         <div class="col col-log-6">
-            <app-signup-container-left (childToParent)="fromsignupChild($event)" *ngIf="showlogin"></app-signup-container-left>
+            <app-signup-container-left (childToParent)="onSwitch()" *ngIf="!showsignup"></app-signup-container-left>
         </div>
+
         <div class="col col-log-6">
+          <div class="row">
+
+            <div class="col-sm">
             <app-login-container-right *ngIf="showlogin"></app-login-container-right>
+          </div>
+
+            <div class="col-sm">
+            <app-signup-container-email *ngIf="showSingE"></app-signup-container-email>
+          </div>
+
+          </div>
         </div>
-        
+
+
+
+
     </div>
     </div>
 
